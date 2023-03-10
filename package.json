@@ -1,0 +1,33 @@
+{
+  "name": "lunahi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.ts",
+  "scripts": {
+    "script:start": "",
+    "script:dev": "",
+    "script:build": "tsc",
+    "docker:up": "",
+    "docker:down": "",
+    "test": "jest --color --detectLeaks --detectOpenHandles --runInBand"
+  },
+  "keywords": [
+    "whatsapp",
+    "node",
+    "websocket",
+    "rest",
+    "api"
+  ],
+  "author": "juniorbotelho<https://github.com/juniorbotelho>",
+  "license": "ISC",
+  "devDependencies": {
+    "@jest/globals": "^29.5.0",
+    "@types/node": "^18.15.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "typescript": "^4.9.5"
+  }
+}
