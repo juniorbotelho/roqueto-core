@@ -5,11 +5,11 @@ module.exports = Object.assign({
   onlyChanged: true,
 
   displayName: {
-    name: 'End2End',
-    color: 'blue',
+    name: 'Integration',
+    color: 'pink',
   },
   testMatch: [
-    "<rootDir>/tests/**/?(*.)+(e2e).[tj]s?(x)",
-    "<rootDir>/src/?(*.)+(e2e).[tj]s?(x)"
+    "<rootDir>/tests/**/?(*.)+(test).[tj]s?(x)",
+    "<rootDir>/src/?(*.)+(test).[tj]s?(x)"
   ],
 }, config);
