@@ -1,0 +1,10 @@
+{
+  "versions": [
+    {
+      "name": "chameleon",
+      "status": "active",
+      "path": "/api/chameleon",
+      "version": 1.0
+    }
+  ]
+}
