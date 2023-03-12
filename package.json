@@ -11,9 +11,8 @@
     "docker:down": "",
     "test": "jest --color",
     "test:ci": "jest --ci",
-    "test:watch": "jest --watch --color",
     "test:coverage": "jest --color --coverage --runInBand",
-    "test:unit": "jest --config='conf/tests/jest-unit.config.js' --watch --color",
+    "test:unit": "jest --config='conf/tests/jest-unit.config.js' --color --runInBand",
     "test:integration": "jest --config='conf/tests/jest-integration.config.js' --color",
     "test:e2e": "jest --config='conf/tests/jest-e2e.config.js' --color",
     "prepare": "husky install"
