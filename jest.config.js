@@ -2,7 +2,7 @@
 module.exports = {
   preset: "ts-jest",
   testEnvironment: "node",
-  bail: true,
+  bail: false,
   detectLeaks: true,
   detectOpenHandles: true,
   maxConcurrency: 32,
