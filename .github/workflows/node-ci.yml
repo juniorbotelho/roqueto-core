@@ -1,5 +1,5 @@
 name: Node CI
-run-name: [${{ github.actor }}] is running node CI
+run-name: ${{ github.actor }} is running node CI
 
 on:
   push:
