@@ -4,12 +4,24 @@ type Sender = {
   message: string;
 };
 
-describe("Base:Chat:Sender", () => {
-  it("should return a schema with valid message text", () => {
-    const sut: Sender = {
+const makeSut = () => {
+  const sender = async (): Promise<Sender> => {
+    return {
       message: "any_message",
     };
+  };
 
-    expect(sut.message).toBe("any_message");
+  return {
+    sender,
+  };
+};
+
+describe("chat message sending function", () => {
+  it("should return a schema with expected properties", () => {
+    const sut = makeSut();
+
+    const res = sut.sender();
+
+    expect(res).resolves.toHaveProperty("message", "any_message");
   });
 });
