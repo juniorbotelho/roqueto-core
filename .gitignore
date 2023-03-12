@@ -143,6 +143,7 @@ out
 .nuxt
 dist
 build
+debug
 
 # Gatsby files
 .cache/

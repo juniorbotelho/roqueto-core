@@ -6,7 +6,7 @@
   "scripts": {
     "script:start": "",
     "script:dev": "",
-    "script:build": "tsc",
+    "script:build": "tsc -p tsconfig.base.json",
     "docker:up": "",
     "docker:down": "",
     "test": "jest --color",
@@ -25,7 +25,7 @@
     "api"
   ],
   "author": "juniorbotelho<https://github.com/juniorbotelho>",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@jest/globals": "^29.5.0",
     "@types/node": "^18.15.0",

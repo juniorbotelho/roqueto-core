@@ -1,28 +1,12 @@
 {
+  "extends": "./tsconfig.base",
   "compilerOptions": {
-    "target": "es2016",
-    "lib": ["esnext"],
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "types": ["node"],
-    "strict": true,
-    "outDir": "build",
     "declaration": true,
     "sourceMap": true,
     "removeComments": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"],
-      "@/tests/*": ["tests/*"]
-    }
+    "outDir": "debug"
   },
   "exclude": [
     "node_modules",
-    "tests",
-    "config"
   ]
 }
