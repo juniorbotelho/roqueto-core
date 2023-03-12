@@ -1,5 +1,5 @@
 name: node-ci
-run-name: ${{ github.actor }} is running out Node CI 🚀
+run-name: running node-ci by ${{ github.actor }} 🚀
 
 on:
   push:
@@ -47,6 +47,6 @@ jobs:
 
       - name: Install Dependencies (pnpm)
         run: pnpm i --frozen-lockfile
-      
+
       - name: Node Testing
         run: pnpm test
