@@ -1,12 +1,12 @@
-const config = require('../../jest.config');
+const config = require("../../jest.config");
 
 module.exports = Object.assign({
   rootDir: "../../",
   onlyChanged: true,
 
   displayName: {
-    name: 'Integration',
-    color: 'pink',
+    name: "Integration",
+    color: "pink",
   },
   testMatch: [
     "<rootDir>/tests/**/?(*.)+(test).[tj]s?(x)",

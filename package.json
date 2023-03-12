@@ -6,7 +6,8 @@
   "scripts": {
     "script:start": "",
     "script:dev": "",
-    "script:build": "tsc -p tsconfig.base.json",
+    "build": "tsc -p tsconfig.base.json",
+    "build:web": "tsc -p web/tsconfig.web.json",
     "docker:up": "",
     "docker:down": "",
     "test": "jest --color",
