@@ -1,3 +1,4 @@
+import { ValidationError } from "@/errors";
 import { describe, expect, it } from "@jest/globals";
 
 type SenderParam = {
@@ -12,16 +13,21 @@ type Sender = {
   message: string;
 };
 
-const sender = async (senderParam: SenderParam): Promise<Sender> => {
+const sender = async (senderParam: SenderParam) => {
   try {
     if (senderParam.message.length <= 0) {
-      throw new Error("The message parameter doesn't be empty");
+      throw new ValidationError({
+        message: "Sent message can't be an empty string",
+        action: "Fill the message with some content before sending",
+      });
     }
     return {
       message: "any_message",
     };
   } catch (error) {
-    return error as Sender;
+    if (error instanceof ValidationError) {
+      return error;
+    }
   }
 };
 
