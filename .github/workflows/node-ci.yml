@@ -1,5 +1,5 @@
 name: Node CI
-run-name: ${{ github.actor }} is running node CI
+run-name: ${{ github.actor }} is running out Node CI 🚀
 
 on:
   push:
@@ -12,15 +12,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Load Node.js version with NVM
-        run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
-        id: nvm
-
       - uses: actions/checkout@v3
-      - name: Use Node.js ${{ steps.nvm.outputs.NODE_VERSION }}
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
+          node-version-file: '.nvmrc'
           cache: 'pnpm'
       - run: pnpm install
       - run: pnpm test
