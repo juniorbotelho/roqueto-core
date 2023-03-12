@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - develop
   pull_request:
     branches:
       - main
@@ -14,10 +15,38 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout Action
+        uses: actions/checkout@v3
+
+      - name: Install Node.js (nvm)
+        uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
-      - run: pnpm i --frozen-lockfile
-      - run: pnpm test
+
+      - name: Install Package Manager (pnpm)
+        uses: pnpm/action-setup@v2
+        id: pnpm
+        with:
+          version: 7.29.1
+          run_install: false
+
+      - name: Configure Store (pnpm)
+        id: store
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Cache (pnpm)
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install Dependencies (pnpm)
+        run: pnpm i --frozen-lockfile
+      
+      - name: Node Testing
+        run: pnpm test
